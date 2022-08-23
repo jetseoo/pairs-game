@@ -1,0 +1,48 @@
+#field {
+  max-width: 400px;
+}
+
+.scene {
+  min-width: 60px;
+  min-height: 60px;
+  perspective: 1500px;
+}
+
+.card-item {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  background-color: transparent;
+  border: none;
+}
+
+.card__face {
+  margin-top: -20px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+}
+
+.card__face--front {
+  background: rgb(0, 110, 255);
+}
+
+.card__face--back {
+  background: rgb(80, 185, 255);
+  transform: rotateY( 180deg );
+  font-size: 2rem;
+  text-align: center;
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.card-item.is-flipped {
+  transform: rotateY(180deg);
+}
